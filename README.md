@@ -27,3 +27,9 @@ bin/update
 ```shell
 bin/shipit
 ```
+
+### Add as git [alias] command
+Configure your local git repo to use the .gitconfig
+```shell
+git config --local include.path ../.gitconfig
+```
