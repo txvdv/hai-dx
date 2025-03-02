@@ -2,15 +2,12 @@
 set -euo pipefail
 # This script guards against developer environment drift
 
-#[ "$(node --version)" = "v16.1.1" ] || { echo "Problem with Node.js"; exit 1; }
-#[ "$(npm --version)" = "$8.0.0" ] || { echo "Problem with npm"; exit 1; }
+. "$HOME/.nvm/nvm.sh" || { printf "Failed to load nvm\n"; exit 1; }
+nvm use || { printf "Failed to switch Node.js version with nvm\n"; exit 1; }
 
-source ~/.nvm/nvm.sh
-nvm use
-
-output=$(npm install --dry-run)
 # Check if the output indicates packages would be changed
-if echo "$output" | grep -q 'added\|removed\|updated'; then
-    echo "Run npm install."
+output=$(npm install --dry-run 2>&1)
+if printf "%s" "$output" | grep -q 'added\|removed\|updated'; then
+    printf "Run npm install.\n"
     exit 1
 fi

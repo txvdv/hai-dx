@@ -1,0 +1,2 @@
+[alias]
+shipit = "!sh bin/shipit"
