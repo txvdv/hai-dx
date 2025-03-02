@@ -1,4 +1,4 @@
-# Contributing docs
+# Contributing documents
 
 ## Installation
 
