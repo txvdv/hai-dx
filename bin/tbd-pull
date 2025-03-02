@@ -9,4 +9,4 @@ git pull --rebase || { printf "Failed to pull and rebase changes.\n"; exit 1; }
 npm ci || { printf "Failed to install npm dependencies with 'npm ci'.\n"; exit 1; }
 
 # Run the doctor script to validate environment
-bin/doctor || { printf "Doctor script detected issues.\n"; exit 1; }
+bin/env-check || { printf "Environment check script detected issues.\n"; exit 1; }
