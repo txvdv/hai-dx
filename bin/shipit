@@ -1,0 +1,14 @@
+#!/bin/sh
+set -euo pipefail
+# This script ships code, replacing `git push`
+
+bin/update
+#npm run test
+#npm run lint
+
+if [[ -n $(git status --porcelain) ]]; then
+  echo "There are changed files in the Git repository."
+  exit 1
+fi
+
+git push

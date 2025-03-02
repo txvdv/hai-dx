@@ -1,0 +1,7 @@
+#!/bin/sh
+set -euo pipefail
+# This script pulls in the latest changes, replacing `git pull`
+
+git pull --rebase
+npm ci
+bin/doctor
