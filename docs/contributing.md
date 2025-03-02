@@ -1,6 +1,6 @@
 # Contributing doc
 
-## Install
+## Installation
 
 1. Install git
 2. [Install nvm](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating)
