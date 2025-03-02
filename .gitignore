@@ -9,5 +9,8 @@
 *.njsproj
 *.sln
 
+# In case shell scripts want to be git aliased
+.gitconfig
+
 # Node
 node_modules
